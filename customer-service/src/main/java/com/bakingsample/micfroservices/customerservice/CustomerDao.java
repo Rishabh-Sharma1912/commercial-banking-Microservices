@@ -54,7 +54,14 @@ public class CustomerDao {
 		//get current session
 		Session currentSession = entityManager.unwrap(Session.class);
 		//create account
-		currentSession.saveOrUpdate(customer);
+		currentSession.save(customer);
+	}
+	
+	public void update(Customer customer) {
+		//get current session
+		Session currentSession = entityManager.unwrap(Session.class);
+		//create account
+		currentSession.update(customer);
 	}
 	
 	public void saveWithAccount(Customer customer,int accountId) {

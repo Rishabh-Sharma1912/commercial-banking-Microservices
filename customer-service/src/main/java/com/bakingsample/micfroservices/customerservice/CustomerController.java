@@ -68,7 +68,7 @@ public class CustomerController {
 	@PutMapping("/customers")
 	public ResponseEntity<Object> updateCustomer(@RequestBody Customer customer) {
 		customerService.save(customer);
-		Customer updatedCustomer = customerService.save(customer);
+		Customer updatedCustomer = customerService.update(customer);
 		URI location = ServletUriComponentsBuilder
 						.fromCurrentRequest()
 						.path("/{id}")

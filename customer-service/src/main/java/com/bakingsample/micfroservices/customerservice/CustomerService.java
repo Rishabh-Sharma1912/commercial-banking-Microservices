@@ -36,6 +36,13 @@ public class CustomerService {
 	}
 	
 	@Transactional
+	public Customer update(Customer customer) {
+		customerDao.update(customer);
+		Customer savedAccount = customerDao.findById(customer.getCustomerId());
+		return savedAccount;
+	}
+	
+	@Transactional
 	public void addAccount(Integer customerId, int accountId) {
 		customerDao.addAccount(customerId, accountId);
 	}
